@@ -64,7 +64,7 @@ const Home = () => {
           React-NodeJs app development/ BIM solutions expert /
           Forge-Dynamo-Python expert{' '}
         </h2>
-        <Link to="/contact" className="flat-button">
+        <Link to="/about" className="flat-button">
           CONTACT ME
         </Link>
       </div>
