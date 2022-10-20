@@ -1,13 +1,4 @@
 import { useEffect, useState } from 'react'
-import {
-  faPython,
-  faAngular,
-  faCss3,
-  faGitAlt,
-  faHtml5,
-  faJsSquare,
-  faReact,
-} from '@fortawesome/free-brands-svg-icons'
 import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './index.scss'
@@ -25,46 +16,39 @@ function Projects() {
   return (
     <>
       <div className="container projects-page">
-        <div className="text-zone">
-          <h1>
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={['P', 'r', 'o', 'j', 'e', 'c', 't', 's']}
-              idx={15}
-            />
-          </h1>
-          <div className="video-container">
-            <video controls width="600px">
-              <source src={vid} type="video/mp4" />
-            </video>
-          </div>
-
-          <h2>Yolo</h2>
-          <p>
-            Im a civil engineer with a very solid intrest for programming and i
-            would like to use it towards the aoutomation of tasks related to
-            construction. I believe that the best possible enviroment to do this
-            is trough BIM tools, given that is the technology and data
-            management side of construction. hhmgvbk,hgvbkjfykv bhkgftdcfjgy
-            vrdrtbgbnuyg
-          </p>
-          <div className="video-container">
-            <video controls width="600px">
-              <source src={vid} type="video/mp4" />
-            </video>
-          </div>
-
-          <h2>Yolo</h2>
-          <p>
-            Im a civil engineer with a very solid intrest for programming and i
-            would like to use it towards the aoutomation of tasks related to
-            construction. I believe that the best possible enviroment to do this
-            is trough BIM tools, given that is the technology and data
-            management side of construction. hhmgvbk,hgvbkjfykv bhkgftdcfjgy
-            vrdrtbgbnuyg
-          </p>
-        </div>
+        <h1>
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={['P', 'r', 'o', 'j', 'e', 'c', 't', 's']}
+            idx={15}
+          />
+        </h1>
+        <Project title="MEP modelling of waste pipelines based on plumbing fixtures, a slope, and a placeholder route"
+        video={vid}
+        description = {`The functionality of the Dynamo Script is to generate the waste pipeline of a building taking into account all the constraints necessary such as:
+- Slope
+- Pipe diameters based on the flow passing throug
+- Downspout location
+- Fixed point location
+In addition, the script was able to create the proper connections between pipes at different angles.
+Complexity Level 8/10`}/>
       </div>
+    </>
+  )
+}
+
+function Project({ title, video, description, resources }) {
+  return (
+    <>
+      {' '}
+      <div className="video-container">
+        <video controls width="600px">
+          <source src={video} type="video/mp4" />
+        </video>
+      </div>
+      <h2>{title}</h2>
+      <text className='description'>{description}</text>
+      <span className="resources">{resources}</span>
     </>
   )
 }
